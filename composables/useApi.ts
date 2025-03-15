@@ -4,8 +4,7 @@ import { ref, computed } from "vue";
 export function useApi() {
   // Usar variable de entorno para la URL de la API
   const baseUrl =
-    process.env.NUXT_PUBLIC_API_BASE_URL ||
-    "https://ecommerce-fullstack-backend.onrender.com";
+    process.env.NUXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api";
   const isLoading = ref(false);
   const error = ref(null);
 
@@ -63,13 +62,14 @@ export function useApi() {
         headers["Authorization"] = `Bearer ${token}`;
       }
 
+      // Eliminar el primer "/" del endpoint si existe
+      const path = endpoint.startsWith("/") ? endpoint.substring(1) : endpoint;
+
       // Construir URL con parámetros de consulta
       const queryString = new URLSearchParams(
         query as Record<string, string>
       ).toString();
-      const url = `${baseUrl}${endpoint}${
-        queryString ? `?${queryString}` : ""
-      }`;
+      const url = `${baseUrl}/${path}${queryString ? `?${queryString}` : ""}`;
 
       const response = await fetchWithRetry(url, {
         method: "GET",
