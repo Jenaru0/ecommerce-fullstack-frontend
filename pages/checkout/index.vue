@@ -178,7 +178,7 @@
                     class="h-8"
                   />
                   <img
-                    src="/assets/images/payment/mastercard.svg"
+                    src="/assets/images/payment/mastercard-pay.svg"
                     alt="Mastercard"
                     class="h-8"
                   />
