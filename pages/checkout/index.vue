@@ -171,17 +171,18 @@
                     Tarjeta de crédito/débito
                   </label>
                 </div>
-                <div class="flex space-x-2">
+                <div class="flex items-center gap-3">
                   <img
-                    src="assets/images/payment/visa.svg"
+                    src="/assets/images/payment/visa.svg"
                     alt="Visa"
                     class="h-8"
                   />
                   <img
-                    src="assets/images/payment/mastercard.svg"
+                    src="/assets/images/payment/mastercard.svg"
                     alt="Mastercard"
                     class="h-8"
                   />
+                  <!-- etc... -->
                 </div>
               </div>
 
