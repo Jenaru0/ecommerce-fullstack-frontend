@@ -3,7 +3,9 @@ import { ref, computed } from "vue";
 // frontend/composables/useApi.ts
 export function useApi() {
   // Usar variable de entorno para la URL de la API
-  const baseUrl = process.env.NUXT_PUBLIC_API_BASE_URL;
+  const baseUrl =
+    process.env.NUXT_PUBLIC_API_BASE_URL ||
+    "https://ecommerce-fullstack-frontend-teal.vercel.app";
   const isLoading = ref(false);
   const error = ref(null);
 
