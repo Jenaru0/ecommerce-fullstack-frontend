@@ -1,8 +1,9 @@
 import { ref, computed } from "vue";
 
+// frontend/composables/useApi.ts
 export function useApi() {
-  // Configuración base de la API
-  const baseUrl = "http://localhost:5000/api";
+  // Usar variable de entorno para la URL de la API
+  const baseUrl = process.env.NUXT_PUBLIC_API_BASE_URL;
   const isLoading = ref(false);
   const error = ref(null);
 
