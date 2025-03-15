@@ -3,7 +3,8 @@ import { ref, computed } from "vue";
 // frontend/composables/useApi.ts
 export function useApi() {
   const baseUrl =
-    process.env.NUXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api";
+    process.env.NUXT_PUBLIC_API_BASE_URL ||
+    "https://ecommerce-fullstack-backend.onrender.com/api";
 
   console.log("API Base URL:", baseUrl); // Para depuración
 
